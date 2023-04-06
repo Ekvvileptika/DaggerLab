@@ -1,20 +1,12 @@
 package az.widget.daggerlab
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
-import az.widget.daggerlab.repository.IRepository
-import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
-
-    @Inject
-    lateinit var repo: IRepository
-
+class MainActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        appComponent.inject(this)
-
-        repo.getSomeFunction()
+        getAppComponent.inject(this)
     }
 }
